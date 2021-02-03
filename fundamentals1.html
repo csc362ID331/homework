@@ -1,0 +1,44 @@
+<!-- 
+    Fundamentals 1
+    February 1, 2020
+    Data Viz
+-->
+
+<body>
+    <svg id="chart" width="600" height="300"></svg>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script>
+        
+        factors = function (num) {
+            // make list of factors 
+            var factors = []
+               // loop runs from 1 to 60
+            for (var i = 1; i <= num; ++i) {
+                // if number is divided by i
+                // i is the factor
+                if (num % i == 0) {
+                    factors.push (i)
+                    console.log(i + " ")
+                    }
+                }
+
+            console.log(factors)
+
+            d3.select("#chart")
+                .selectAll("circle")
+                .data(factors)
+                .enter()
+                .append("circle")
+                .attr("r", d => d ) 
+                .attr("cy", 100)
+                .attr("cx", d => d*10)   
+                .style("fill","pink") 
+                .style("stroke","lightblue") 
+        }
+
+        // factors(24)
+        factors(73)
+        factors(100)
+
+    </script>
+</body>

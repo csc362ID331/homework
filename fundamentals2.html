@@ -1,0 +1,43 @@
+<!-- 
+    Fundamentals 2
+    February 1, 2020
+    Data Viz
+-->
+
+<body>
+    <svg id="chart" width="1000" height="300"></svg>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script>
+        const array = [92, 56, 14, 73, 22, 38, 93, 45, 55];
+        var start = 0
+            d3.select("#chart")
+                .selectAll("circle")
+                .data(array)
+                .enter()
+                .append("circle")
+                .attr("r", d => d/2 ) 
+                .attr("cy", 100)
+                // need to add width of the circle to this addition
+                .attr("cx", function () {if (start == 0) {console.log("Start is 50"); start += 50 ; return 50} else {start = start + 100};  console.log("Start is " + start); return start})   
+                .style("fill","pink") 
+                .style("stroke","lightblue") 
+
+            const sorted = array.sort()
+            console.log (sorted)
+            start = 0
+
+            setTimeout(function(array) {
+                d3.select("#chart")
+                .selectAll("circle")
+                .data(sorted)
+                .transition().duration(1000)
+                .attr("r", d => d/2)
+                // need to add width of the circle to this addition
+                .attr("cx", function () {if (start == 0) {console.log("Start is 50"); start += 50 ; return 50} else {start = start + 100};  console.log("Start is " + start); return start})   
+                .style("fill","lightblue") 
+                .style("stroke","pink")  
+
+            }, 2000)
+
+    </script>
+</body>
