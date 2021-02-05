@@ -18,14 +18,12 @@
                 .attr("r", d => d/2 ) 
                 .attr("cy", 100)
                 // need to add width of the circle to this addition
-                .attr("cx", function () {if (start == 0) {console.log("Start is 50"); start += 50 ; return 50} else {start = start + 100};  console.log("Start is " + start); return start})   
+                .attr("cx", function (d,i) {return 100*i})
                 .style("fill","pink") 
                 .style("stroke","lightblue") 
 
             const sorted = array.sort()
-            console.log (sorted)
-            start = 0
-
+        
             setTimeout(function(array) {
                 d3.select("#chart")
                 .selectAll("circle")
@@ -33,11 +31,9 @@
                 .transition().duration(1000)
                 .attr("r", d => d/2)
                 // need to add width of the circle to this addition
-                .attr("cx", function () {if (start == 0) {console.log("Start is 50"); start += 50 ; return 50} else {start = start + 100};  console.log("Start is " + start); return start})   
+                .attr("cx", function (d,i) {return 100*i})
                 .style("fill","lightblue") 
                 .style("stroke","pink")  
-
             }, 2000)
-
     </script>
 </body>
