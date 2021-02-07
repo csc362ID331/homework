@@ -17,8 +17,7 @@
                 .append("circle")
                 .attr("r", d => d/2 ) 
                 .attr("cy", 100)
-                // need to add width of the circle to this addition
-                .attr("cx", function (d,i) {return 100*i})
+                .attr("cx", function (d,i) {return 100*i+50})
                 .style("fill","pink") 
                 .style("stroke","lightblue") 
 
@@ -30,8 +29,7 @@
                 .data(sorted)
                 .transition().duration(1000)
                 .attr("r", d => d/2)
-                // need to add width of the circle to this addition
-                .attr("cx", function (d,i) {return 100*i})
+                .attr("cx", function (d,i) {return 100*i+50})
                 .style("fill","lightblue") 
                 .style("stroke","pink")  
             }, 2000)
