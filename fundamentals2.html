@@ -9,7 +9,7 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script>
         const array = [92, 56, 14, 73, 22, 38, 93, 45, 55];
-        var start = 0
+        // use the values in array to create circles spaced 100px apart
             d3.select("#chart")
                 .selectAll("circle")
                 .data(array)
@@ -22,12 +22,13 @@
                 .style("stroke","lightblue") 
 
             const sorted = array.sort()
-        
+
+        // after 1.5s shift circles into size order and maintain distance
             setTimeout(function(array) {
                 d3.select("#chart")
                 .selectAll("circle")
                 .data(sorted)
-                .transition().duration(1000)
+                .transition().duration(1500)
                 .attr("r", d => d/2)
                 .attr("cx", function (d,i) {return 100*i+50})
                 .style("fill","lightblue") 
