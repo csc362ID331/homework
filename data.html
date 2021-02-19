@@ -9,6 +9,7 @@
   <div id="interval"></div>
   <div id="ratio"></div>
 
+  <!-- Set styles -->
   <style>
     .header {
         color : navy;
@@ -36,11 +37,13 @@
   </style>
 
   <script>
+    // for each div, add a heading
     d3.select("div")
     .classed("header", true)
     .append("h1")
     .text("NOIR - 4 Data Types to Know")
 
+    // for each informational div add a heading a paragraph containing iinformation about the topic
     d3.select("#nominal")
     .classed("nominal", true)
     .append("h1")
