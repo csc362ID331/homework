@@ -1,69 +1,77 @@
-<!--
-Your names goes here
--->
+
 <body>
   <script src="https://d3js.org/d3.v5.min.js"></script>
 
   <!-- Set up basic webpage structure -->
-  <div id="header" class = "header">
-      <p><b>NOIR - 4 Data Types to Know  </b></p>
-  </div>
-  <div id="nominal" class = "nominal">
-      <header class = "header">Nominal</header>
-      <p>   Nominal variables are those which represent qualitative variables. These varaibles 
-          are represented purely by a name and do not have any values associated with them </p>
-  </div>
-
-  <div id="ordinal" class = "ordinal">
-    <header class = "header">Ordinal</header>
-    <p> Ordinal variables are those which have an order but one in which the intervals 
-        between values is not clearly defined.</p>
-  </div>
-        
-  <div id="interval" class = "interval">
-    <header class = "header">Interval</header>
-    <p> Interval variables are those whiich have an order as well as a measurable difference between 
-        values. Interval data do not have an absolute zero.
-    </p>
-  </div>
-       
-  <div id="ratio" class = "ratio">
-    <header class = "header">Ratio</header>
-    <p> Ratio data are similar to interval data but they do have an absolute zero. This quality 
-        makes them the most appealing type of data to work with.</p>
-  </div>
+  <div id="header"></div>
+  <div id="nominal"></div>
+  <div id="ordinal"></div>
+  <div id="interval"></div>
+  <div id="ratio"></div>
 
   <style>
-    header {
-        text-decoration: underline;
+    .header {
+        color : navy;
+        text-align: center;
     }
-    p { 
-        font-family : Arial;
+    .nominal {
+        background-color : lavender;
     }
-    .header{
-        color: navy;
+    .interval {
+        background-color: navy;
         text-align: center;
         font-family : Arial;
     }
-    .nominal {
-        color: gray;
-        background-color: lavender;
-    }
     .ordinal {
-        color: lightblue;
+        color: white;
+        background-color: gray;
     }
-    .interval {
-        color: gray;
-        background-color: lavender;
+    .lightblue {
+        background-color: lightblue;
     }
-    .ratio {
-        color:lightblue;
+    h1 {
+        text-align: center;
     }
+    
   </style>
 
   <script>
-    //your code goes here
+    d3.select("div")
+    .classed("header", true)
+    .append("h1")
+    .text("NOIR - 4 Data Types to Know")
 
+    d3.select("#nominal")
+    .classed("nominal", true)
+    .append("h1")
+    .text("Nominal")
+    d3.select("#nominal")
+    .append("p")
+    .text("Nominal variables are those which represent qualitative variables. These varaibles are represented purely by a name and do not have any values associated with them")
+
+    d3.select("#ordinal")
+    .classed("orindal", true)
+    .append("h1")
+    .text("Ordinal")
+    d3.select("#ordinal")
+    .append("p")
+    .text("Ordinal variables are those which have an order but one in which the intervals between values is not clearly defined.")
+    
+    d3.select("#interval")
+    .classed("initerval", true)
+    .append("h1")
+    .text("Interval")
+    d3.select("#interval")
+    .append("p")
+    .text("Interval variables are those whiich have an order as well as a measurable difference between values. Interval data do not have an absolute zero.")
+     
+    d3.select("#ratio")
+    .classed("ratio", true)
+    .append("h1")
+    .text("Ratio")
+    d3.select("#ratio")
+    .append("p")
+    .text("Ratio data are similar to interval data but they do have an absolute zero. This quality makes them the most appealing type of data to work with.")
   </script>
 
 </body>
