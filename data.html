@@ -12,23 +12,28 @@
   <!-- Set styles -->
   <style>
     .header {
-        color : navy;
-        text-align: center;
-    }
-    .nominal {
-        background-color : lavender;
-    }
-    .interval {
-        background-color: navy;
+        color : lightsteelblue;
         text-align: center;
         font-family : Arial;
     }
-    .ordinal {
-        color: white;
-        background-color: gray;
+    .nominal {
+        color: teal;
+        background-color:  lightgoldenrodyellow;
+        font-family : Arial;
     }
-    .lightblue {
-        background-color: lightblue;
+    .ordinal {
+        color : lightsteelblue;
+        text-align: center;
+        font-family : Arial;
+    }
+    .interval {
+        color: grey;
+        background-color: lavender;
+        font-family : Arial;
+    }
+    .ratio {
+        color : teal;
+        font-family : Arial;
     }
     h1 {
         text-align: center;
@@ -53,7 +58,7 @@
     .text("Nominal variables are those which represent qualitative variables. These varaibles are represented purely by a name and do not have any values associated with them")
 
     d3.select("#ordinal")
-    .classed("orindal", true)
+    .classed("ordinal", true)
     .append("h1")
     .text("Ordinal")
     d3.select("#ordinal")
@@ -61,7 +66,7 @@
     .text("Ordinal variables are those which have an order but one in which the intervals between values is not clearly defined.")
     
     d3.select("#interval")
-    .classed("initerval", true)
+    .classed("interval", true)
     .append("h1")
     .text("Interval")
     d3.select("#interval")
